@@ -18,7 +18,7 @@ const CardTask = () => {
     <div className="absolute w-[650px]  h-[650px]  bg-white  right-5 bottom-7  flex-col rounded-md">
       <div className="w-full flex flex-row items-center  px-5 bg-white rounded-md">
         <div className="flex w-full  my-3 ">
-          <button onClick={() => dispatch({ type: "OPEN_CHAT" })}>
+          <button onClick={() => dispatch({ type: "OPEN_TASK" })}>
             <FaArrowLeft className="px-1 text-2xl" />
           </button>
         </div>
