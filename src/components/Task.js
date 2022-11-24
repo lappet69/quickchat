@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { BiPencil } from "react-icons/bi";
-import { BsChevronUp } from "react-icons/bs";
+import { BsChevronDown, BsChevronUp } from "react-icons/bs";
 import { HiDotsHorizontal } from "react-icons/hi";
 import { IoMdTime } from "react-icons/io";
 import { useDispatch } from "react-redux";
@@ -11,6 +11,7 @@ const Task = () => {
   const [isLoading, setIsLoading] = useState(true);
   const dispatch = useDispatch();
   const [data, setData] = useState();
+  const [fold, setFold] = useState(true);
 
   const fetchTodo = async () => {
     const results = await fetch("https://jsonplaceholder.typicode.com/todos")
@@ -55,12 +56,16 @@ const Task = () => {
                     <div className="w-full flex gap-5">
                       <input
                         type="checkbox"
-                        className="cursor-pointer "
+                        className={`cursor-pointer ${
+                          task?.completed ? "line-through" : ""
+                        }`}
                         name=""
-                        value=""
+                        checked={task?.completed}
                       />
                       <p
-                        className="text-textColor font-bold cursor-pointer "
+                        className={`cursor-pointer font-bold ${
+                          task?.completed ? "line-through" : ""
+                        }`}
                         onClick={() =>
                           dispatch({
                             type: "OPEN_MY_TASK",
@@ -76,26 +81,38 @@ const Task = () => {
                       <p className="text-sm">
                         {new Date("2011", "04").toLocaleDateString()}
                       </p>
-                      <BsChevronUp className="cursor-pointer " />
+                      {fold ? (
+                        <BsChevronUp
+                        className="cursor-pointer "
+                        onClick={() => setFold(!fold)}
+                      />
+                        ) : (
+                          <BsChevronDown
+                            className="cursor-pointer "
+                            onClick={() => setFold(!fold)}
+                          />
+                      )}
                       <HiDotsHorizontal className="cursor-pointer " />
                     </div>
                   </div>
-                  <div className="w-full px-9 pt-5">
-                    <div className="w-full flex items-center gap-3">
-                      <IoMdTime className="text-primary text-xl" />
-                      <input
-                        type="date"
-                        name=""
-                        className="border border-textColor p-1"
-                        value=""
-                        defaultValue={new Date().toDateString()}
-                      />
+                  {fold && (
+                    <div className="w-full px-9 pt-5">
+                      <div className="w-full flex items-center gap-3">
+                        <IoMdTime className="text-primary text-xl" />
+                        <input
+                          type="date"
+                          name=""
+                          className="border border-textColor p-1"
+                          value=""
+                          defaultValue={new Date().toDateString()}
+                        />
+                      </div>
+                      <div className="w-full flex items-center gap-3">
+                        <BiPencil className="text-primary text-xl" />
+                        <p>{task.desc || "No Description"}</p>
+                      </div>
                     </div>
-                    <div className="w-full flex items-center gap-3">
-                      <BiPencil className="text-primary text-xl" />
-                      <p>{task.desc || "No Description"}</p>
-                    </div>
-                  </div>
+                  )}
                 </div>
               ))}
           </div>
