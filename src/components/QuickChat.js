@@ -2,10 +2,11 @@ import React, { useEffect, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 import Loader from "./Loader";
+import UserImg from "../assets/user.png";
+
 const QuickChat = () => {
   const dispatch = useDispatch();
   const [isLoading, setIsLoading] = useState(true);
-  const [task, setTask] = useState(false);
   const data = [
     { id: 1, name: "James", chats: ["helo", "goodbeye", "done"] },
     { id: 2, name: "Rambo", chats: ["helo", "goodbeye", "last"] },
@@ -33,7 +34,7 @@ const QuickChat = () => {
       </div>
       <div className="h-full w-full  bg-white  px-5 flex rounded-b-md ">
         {isLoading ? (
-          <Loader text={"Loading Chats ..."}/>
+          <Loader text={"Loading Chats ..."} />
         ) : (
           <div className="w-full h-full flex flex-col gap-5 my-3">
             {data &&
@@ -48,8 +49,17 @@ const QuickChat = () => {
                     })
                   }
                 >
-                  <p>{user.name}</p>
-                  <p>{user.chats.slice(-1)[0]}</p>
+                  <div className="w-full flex items-center gap-5 border-b border-b-divider pb-10">
+                    <img src={UserImg} alt="" className="-mt-7" />
+                    <div className="w-full">
+                      <div className="w-full flex gap-6 items-center">
+                        <h1 className="text-primary text-lg font-bold">Title</h1>
+                        <p className="text-xs text-textColor">{ new Date('2011', '04' - 1, '11', '11', '51', '00').toLocaleString()}</p>
+                      </div>
+                      <p className="text-textColor font-bold">{user.name}</p>
+                      <p className="text-textColor">{user.chats.slice(-1)[0]}</p>
+                    </div>
+                  </div>
                 </div>
               ))}
           </div>

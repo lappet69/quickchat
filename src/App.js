@@ -14,13 +14,12 @@ function App() {
 
   const [chatPerson, setChatPerson] = useState(false);
   const [task, setTask] = useState(false);
-  const [todo, setTodo] = useState(false);
 
   useEffect(() => {}, []);
 
   return (
     <div className="w-screen h-screen relative">
-      <QuickInbox quickChat={quickChat} task={task} chatPerson={chatPerson} />
+      <QuickInbox  />
 
       <div className="flex absolute right-0 bottom-0 gap-3 p-4">
         <button

@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { FaArrowLeft } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import Loader from "./Loader";
-const ChatPerson = () => {
+
+const CardTask = () => {
   const dispatch = useDispatch();
   const [isLoading, setIsLoading] = useState(true);
   const data = useSelector((state) => state.State.chatsUser);
@@ -15,7 +16,6 @@ const ChatPerson = () => {
 
   return (
     <div className="absolute w-[650px]  h-[650px]  bg-white  right-5 bottom-7  flex-col rounded-md">
-      {/* ChatPerson */}
       <div className="w-full flex flex-row items-center  px-5 bg-white rounded-md">
         <div className="flex w-full  my-3 ">
           <button onClick={() => dispatch({ type: "OPEN_CHAT" })}>
@@ -28,14 +28,7 @@ const ChatPerson = () => {
           <Loader />
         ) : (
           <div className="w-full h-full flex flex-col gap-5 my-3">
-            <div
-              key={data.id}
-              className="w-full  bg-white p-2 cursor-pointer"
-              // onClick={() => dispatch({ type: "OPEN_CHAT_PERSON" })}
-            >
-              <p>{data.name}</p>
-              <p>{data.chats.slice(-1)[0]}</p>
-            </div>
+            detail task
           </div>
         )}
       </div>
@@ -43,4 +36,4 @@ const ChatPerson = () => {
   );
 };
 
-export default ChatPerson;
+export default CardTask;

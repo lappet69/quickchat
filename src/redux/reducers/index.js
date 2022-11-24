@@ -6,9 +6,11 @@ import todos from "./todos.reducer";
 
 const State = {
   isTask: false,
+  isMyTask: false,
   isChat: false,
   isTodo: false,
   isChatPerson: false,
+  taskList:{},
   chatsUser: {},
   todoLists: {},
 };
@@ -41,6 +43,14 @@ export const init = (state = { ...State }, action) => {
         isTask: false,
         isTodo: false,
         chatsUser: action.payload,
+      };
+    case "OPEN_MY_TASK":
+      return {
+        isMyTask: !state.isMyTask,
+        isChatPerson: false,
+        isTask: false,
+        isTodo: false,
+        taskList: action.payload,
       };
     default:
       return state;

@@ -1,6 +1,7 @@
 import React from "react";
 import { FaSearch } from "react-icons/fa";
 import { useSelector } from "react-redux";
+import CardTask from "./CardTask";
 import ChatPerson from "./ChatPerson";
 import QuickChat from "./QuickChat";
 import Task from "./Task";
@@ -26,6 +27,7 @@ const QuickInbox = () => {
         {isOpen.isChat && <QuickChat />}
         {isOpen.isTask && <Task />}
         {isOpen.isChatPerson && <ChatPerson />}
+        {isOpen.isMyTask && <CardTask />}
       </div>
     </div>
   );

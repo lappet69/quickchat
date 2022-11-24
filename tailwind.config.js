@@ -9,7 +9,7 @@ module.exports = {
       colors: {
         headingColor: "#2e2e2e",
         textColor: "#4F4F4F",
-        cartNumBg: "#FE8029",
+        divider: "#828282",
         primary: "#2F80ED",
         seacrhBg: "#4f4f4f",
         chatInbox: "#262626",
