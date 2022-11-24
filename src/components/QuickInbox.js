@@ -9,8 +9,8 @@ const QuickInbox = () => {
   const isOpen = useSelector((state) => state.State);
 
   return (
-    <div className="w-full relative h-screen bg-black">
-      <div className="w-full flex items-center bg-slate-500">
+    <div className="w-full relative h-screen bg-chatInbox">
+      <div className="w-full flex items-center bg-seacrhBg">
         <button>
           <FaSearch className="px-1 text-2xl" />
         </button>

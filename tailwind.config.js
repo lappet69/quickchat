@@ -6,6 +6,15 @@ module.exports = {
       animation: {
         "spin-slow": "spin 3s linear infinite",
       },
+      colors: {
+        headingColor: "#2e2e2e",
+        textColor: "#4F4F4F",
+        cartNumBg: "#FE8029",
+        primary: "#2F80ED",
+        seacrhBg: "#4f4f4f",
+        chatInbox: "#262626",
+      },
+
     },
   },
   plugins: [],

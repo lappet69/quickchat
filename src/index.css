@@ -28,8 +28,8 @@ code {
   
   width: 60px;
   height: 60px;
-  border: 3px solid #C4C4C4; 
-  border-top: 3px solid #f3f3f3; 
+  border: 5px solid #C4C4C4; 
+  border-top: 5px solid #f3f3f3; 
   border-radius: 80%;
   animation: spinner 1.5s linear infinite;
 }

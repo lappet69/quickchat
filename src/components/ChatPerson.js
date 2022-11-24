@@ -14,7 +14,7 @@ const ChatPerson = () => {
   }, []);
 
   return (
-    <div className=" relative w-full h-[500px] md:h-[700px] md:w-[500px] bg-white  right-4  flex-col rounded-md">
+    <div className="absolute w-[650px]  h-[650px]  bg-white  right-5 bottom-7  flex-col rounded-md">
       {/* ChatPerson */}
       <div className="w-full flex flex-row items-center  px-5 bg-white rounded-md">
         <div className="flex w-full  my-3 ">
@@ -23,7 +23,7 @@ const ChatPerson = () => {
           </button>
         </div>
       </div>
-      <div className="relative   w-full h-full bg-gray-600  px-5 flex rounded-b-md ">
+      <div className="h-full w-full  bg-white  px-5 flex rounded-b-md ">
         {isLoading ? (
           <Loader />
         ) : (

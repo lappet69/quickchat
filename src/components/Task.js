@@ -16,7 +16,7 @@ const Task = () => {
     }, 1200);
   }, []);
   return (
-    <div className=" relative w-full h-[500px] md:h-[700px] md:w-[500px] bg-white  right-4  flex-col rounded-md ">
+    <div className=" absolute w-[650px]  h-[650px]  bg-white  right-5 bottom-7  flex-col rounded-md">
       <div className="w-full flex flex-row items-center  px-5 bg-white rounded-md">
         <form className="flex w-full px-5 my-3 border ">
           <input
@@ -29,9 +29,9 @@ const Task = () => {
           </button>
         </form>
       </div>
-      <div className="relative   w-full h-full bg-gray-600  px-5 flex rounded-b-md">
+      <div className="h-full w-full  bg-white  px-5 flex rounded-b-md ">
         {isLoading ? (
-          <Loader />
+          <Loader text={"Loading Task List ..."} />
         ) : (
           <div className="w-full   h-full  flex flex-col gap-5 my-3">
             {data &&

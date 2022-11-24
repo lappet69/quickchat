@@ -1,16 +1,15 @@
 import "./App.css";
+import InboxImg from "./assets/inbox.png";
+import TaskImg from "./assets/task.png";
+import ThunderImg from "./assets/thunder.png";
 import QuickInbox from "./components/QuickInbox";
-import QuickChat from "./components/QuickChat";
 
-import { FaSearch, FaRocketchat, FaTasks } from "react-icons/fa";
-import { AiTwotoneThunderbolt } from "react-icons/ai";
 import { useEffect, useState } from "react";
-import Task from "./components/Task";
 import { useDispatch, useSelector } from "react-redux";
 
 function App() {
-const quickChat = useSelector(state => state.State.quickChat)
-const dispacth = useDispatch()
+  const quickChat = useSelector((state) => state.State.quickChat);
+  const dispacth = useDispatch();
   // const [quickChat, setQuickChat] = useState(false);
 
   const [chatPerson, setChatPerson] = useState(false);
@@ -25,28 +24,28 @@ const dispacth = useDispatch()
 
       <div className="flex absolute right-0 bottom-0 gap-3 p-4">
         <button
-          className="bg-red-400 rounded-full p-3"
+          className=""
           onClick={() => {
-            dispacth({type:"OPEN_CHAT"})
+            dispacth({ type: "OPEN_TASK" });
           }}
         >
-          <FaRocketchat className="text-cyan-400 text-3xl  " />
+          <img src={TaskImg} alt="" />
         </button>
         <button
-          className="bg-red-400 rounded-full p-3"
+          className=""
           onClick={() => {
-            dispacth({type:"OPEN_TASK"})
+            dispacth({ type: "OPEN_CHAT" });
           }}
         >
-          <FaTasks className="text-cyan-400 text-3xl  " />
+          <img src={InboxImg} alt="Inbox" />
         </button>
+
         <button
-          className="bg-cyan-400 rounded-full p-3"
           onClick={() => {
-            dispacth({type:"OPEN_TODO"})
+            dispacth({ type: "OPEN_TODO" });
           }}
         >
-          <AiTwotoneThunderbolt className="text-white text-3xl  " />
+          <img src={ThunderImg} alt="" />
         </button>
       </div>
     </div>
