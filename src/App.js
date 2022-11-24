@@ -10,7 +10,6 @@ import { useDispatch, useSelector } from "react-redux";
 function App() {
   const quickChat = useSelector((state) => state.State.quickChat);
   const dispacth = useDispatch();
-  // const [quickChat, setQuickChat] = useState(false);
 
   const [chatPerson, setChatPerson] = useState(false);
   const [task, setTask] = useState(false);

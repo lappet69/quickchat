@@ -13,13 +13,13 @@ const QuickInbox = () => {
     <div className="w-full relative h-screen bg-chatInbox">
       <div className="w-full flex items-center bg-seacrhBg">
         <button>
-          <FaSearch className="px-1 text-2xl" />
+          <FaSearch className="px-1 mx-5 text-2xl text-white" />
         </button>
         <form className="w-full ">
           <input
             type="text"
             className="w-full bg-transparent p-2 text-center"
-            placeholder="search"
+            placeholder="Search"
           />
         </form>
       </div>
