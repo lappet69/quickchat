@@ -13,8 +13,9 @@ module.exports = {
         primary: "#2F80ED",
         seacrhBg: "#4f4f4f",
         chatInbox: "#262626",
+        cardBg: "#ebf2e8",
+        homeBg: "#eaeaea",
       },
-
     },
   },
   plugins: [],
